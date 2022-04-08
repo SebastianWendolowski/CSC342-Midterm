@@ -23,7 +23,6 @@ let db = new sqlite3.Database('./games_and_anime.db', (err) => {
     }
 })
 
-
 // GET FUNCTIONS FOR API
  app.get("/api/games/", function (req, res) {
     let sql = "SELECT * from games";
@@ -99,17 +98,6 @@ app.get("/api/anime/:id", (req, res) => {
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-
 // POST FUNCTIONS FOR API
 app.post("/api/games/", (req, res) => {
     let sql = "INSERT INTO games(title,release_year,console,genre,developer) VALUES (?,?,?,?,?)"
@@ -174,18 +162,6 @@ app.post("/api/anime/:title/:release_year/:genre/:studio/", (req, res) => {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // PUT FUNCTIONS FOR API
 app.put("/api/games/", (req, res) => {
@@ -299,19 +275,6 @@ app.put("/api/anime/:title/:release_year/:genre/:studio/:ID/", (req, res) => {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // DELETE FUNCTIONS FOR API
 app.delete("/api/games/:ID/", (req, res) => {
